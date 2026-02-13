@@ -12,17 +12,37 @@
     <div class="row">
       <div class="col pt-3">
         <div class="position-relative">
-          <img class="position-relative b-block w-100" src="assets/img/mountains.svg" alt="Mountains">
-          <img class="position-absolute w-100" style="inset: 0" src="assets/img/front-trees.svg" alt="Forest">
-          <img class="position-absolute w-100" style="inset: 0" src="assets/img/northern-trek.svg" alt="Northern Trek">
-          <img class="position-absolute w-100" style="inset: 0;z-index:-1" src="assets/img/bottom-background.svg" alt="">
-          <p class="lead position-absolute bottom-0 start-50 translate-middle text-white fs-3 fw-semibold mb-0">Raising&nbsp;funds&nbsp;for&nbsp;Canada's&nbsp;fallen&nbsp;firefighters.</p>
+          <img class="position-relative b-block w-100" src="assets/img/hero.png">
+          <img class="position-absolute w-100" style="inset: 0; margin-top: 55px;" src="assets/img/northern-trek.svg" alt="Northern Trek">
+          <p class="d-sm-none d-md-block lead position-absolute bottom-0 start-50 translate-middle text-white fs-3 fw-semibold mb-0">Raising&nbsp;funds&nbsp;for&nbsp;Canada's&nbsp;fallen&nbsp;firefighters.</p>
         </div>
       </div>
     </div>
-    <div class="row" style="margin-top: -1px;">
+    <div class="row">
       <div class="col">
-        <div class="bg-deep-forest" style="height: 500px;"></div>
+        <div class="bg-deep-forest" style="height:125px; margin-top: -125px;"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="path-container bg-deep-forest">
+          <svg viewBox="0 0 800 2400" xmlns="http://www.w3.org/2000/svg">
+            <!-- The path the element will follow - going down the screen -->
+            <path id="motionPath" class="path" d="M 400 100 Q 200 400, 400 700 Q 600 1000, 400 1300 Q 200 1600, 400 1900 Q 600 2200, 400 2300" />
+            
+            <!-- The animated element (a location marker) -->
+            <g class="animated-element" transform="translate(400, 100)">
+              <!-- <path d="M 0,-50 C -15,-50 -27,-38 -27,-23 C -27,-10 0,20 0,20 C 0,20 27,-10 27,-23 C 27,-38 15,-50 0,-50 Z" fill="#ff6b6b"/> -->
+              <image href="assets/img/marker.png" x="-32" y="-60" width="64px" height="83px"/>
+              <text id="total-earned" x="50" y="-20" text-anchor="start" font-size="32" fill="#fff" stroke="#222" stroke-width="1" paint-order="stroke" dominant-baseline="middle">$0</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" style="height:100vh;">
+
       </div>
     </div>
   </div>
