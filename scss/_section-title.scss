@@ -1,0 +1,80 @@
+/*** 
+
+====================================================================
+Section Title
+====================================================================
+
+***/
+
+.sec-title {
+    margin-bottom: 30px;
+
+     @include media-breakpoint-down (md){
+       margin-bottom: 10px;
+    }
+
+    .sec-sub-title {
+        display: inline-block;
+        text-align: center;
+        margin-bottom: 10px;
+
+        &.color-2 {
+            .sub-title {
+                font-family: var(--body-font-family);
+                color: var(--text-color);
+            }
+        }
+
+        .sub-title {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1;
+            position: relative;
+            padding-left: 15px;
+            color: var(--theme-color3);
+            font-family: var(--body-font-family);
+
+            &.color-2 {
+                color: var(--theme-color2);
+            }
+
+            &::before {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                content: "";
+                transform: translateY(-50%);
+                width: 8px;
+                height: 8px;
+                border-radius: 8px;
+                background-color: var(--theme-color1);
+            }
+        }
+
+    }
+
+    .title {
+        @include media-breakpoint-down (xl){
+            font-size: 44px;
+        }
+
+         @include media-breakpoint-down (md){
+            font-size: 40px;
+        }
+
+         @include media-breakpoint-down (sm){
+            font-size: 36px;
+        }
+
+         @include media-breakpoint-down (xxs){
+            font-size: 28px;
+        }
+    }
+}
+
+.section-title-area {
+    @include flex-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    row-gap: 30px;
+}

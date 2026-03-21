@@ -1,0 +1,257 @@
+.volunteer-banner-section {
+  margin: 0 40px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 9;
+
+  .vec-shape {
+    position: absolute;
+    top: 100px;
+    left: 0;
+
+    @include media-breakpoint-down (xxxl){
+      display: none;
+    }
+  }
+
+  .frame-shape {
+    position: absolute;
+    top: 0;
+    left: 14%;
+
+    @include media-breakpoint-down (xxxl){
+      display: none;
+    }
+  }
+
+  &::before {
+    @include before;
+    background-color: var(--theme-color3);
+    border-radius: 20px;
+    height: 85%;
+  }
+
+  .volunteer-image {
+    border-radius: 30px;
+    max-width: 1628px;
+    margin: 60px auto 0;
+
+    @include media-breakpoint-down (xxxl){
+      padding: 0 30px;
+    }
+
+    @include media-breakpoint-down (md){
+      margin-top: 30px;
+      padding: 0 20px;
+    }
+
+    .fix {
+     border-radius: 30px;
+   }
+   img {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+
+    @include media-breakpoint-down (sm){
+      height: 300px;
+      object-fit: cover;
+    }
+  }
+}
+
+.shape-1 {
+  position: absolute;
+  right: -20px;
+  top: -24px;
+
+  @include media-breakpoint-down (xxxl){
+    right: -20px;
+    max-width: 800px;
+    top: -20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @include media-breakpoint-down (xxl){
+    max-width: 610px;
+  }
+
+  @include media-breakpoint-down (xl){
+    max-width: 500px;
+  }
+
+  @include media-breakpoint-down (lg){
+    display: none;
+  }
+}
+
+@include media-breakpoint-down (xxxl){
+  margin: 0 35px;
+}
+
+@include media-breakpoint-down (xxl){
+  margin: 0 28px;
+}
+
+@include media-breakpoint-down (xl){
+  margin: 0 20px;
+}
+
+@include media-breakpoint-down (xxs){
+  margin: 0 16px;
+}
+
+.sec-title {
+  .sub-title {
+    color: var(--theme-color2);
+  }
+}
+
+.counter-items {
+  text-align: right;
+  position: relative;
+  z-index: 9;
+
+  @include media-breakpoint-down (lg){
+   text-align: left;
+ }
+
+ .count-box {
+  font-size: 90px;
+  font-weight: 700;
+  line-height: 1;
+
+  @include media-breakpoint-down (xl){
+    font-size: 60px;
+  }
+
+  @include media-breakpoint-down (lg){
+    color: var(--theme-color-white);
+  }
+
+  @include media-breakpoint-down (sm){
+    font-size: 40px;
+  }
+}
+
+p {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: var(--heading-font-family);
+  color: var(--headings-color);
+
+  @include media-breakpoint-down (lg){
+    color: var(--theme-color-white);
+  }
+}
+}
+
+.volunteer-btn {
+  text-align: center;
+  margin-top: -33px;
+}
+}
+
+
+.team-block {
+  margin-bottom: 30px;
+  .inner-block {
+    position: relative;
+    &:hover {
+      .image {
+        img {
+          transform: scale(1.1);
+        }
+      }
+      .content {
+        background: var(--theme-color1);
+        .social-icon {
+          margin-bottom: 0;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+    .image {
+      border-radius: 10px;
+      position: relative;
+      height: 385px;
+      overflow: hidden;
+      @include media-breakpoint-down(xl){
+        height: 618px;
+      }
+      @include media-breakpoint-down(lg){
+        height: 418px;
+      }
+      @include media-breakpoint-down(md){
+        height: 500px;
+      }
+      img {
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include transition(all 300ms ease);
+      }
+    }
+    .content {
+      background: var(--theme-color1);
+      backdrop-filter: blur(60px);
+      border-radius: 10px;
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      text-align: center;
+      padding: 22px 25px 25px;
+      overflow: hidden;
+      @include transition(all 300ms ease);
+      @include media-breakpoint-down(sm){
+        padding: 22px 15px 25px;
+      }
+      .title {
+        color: #fff;
+        margin-bottom: 0;
+      }
+      .designation {
+        color: rgba(var(--theme-color-white-rgb), .65);
+      }
+      .social-icon {
+        margin-top: 18px;
+        margin-bottom: -60px;
+        opacity: 0;
+        visibility: hidden;
+        @include transition(all 300ms ease);
+        li {
+          display: inline-block;
+          margin: 0 3.5px;
+          @include transition(all 300ms ease);
+          a {
+            background-color: transparent;
+            border: 1px solid rgba(var(--theme-color-white-rgb), .1);
+            border-radius: 14px;
+            display: inline-block;
+            color: var(--theme-color1-text-color);
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            width: 36px;
+            @include transition(all 300ms ease);
+            &:hover {
+              background-color: var(--theme-color2);
+              border-color: var(--theme-color2);
+              color: var(--theme-color2-text-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
