@@ -8116,7 +8116,7 @@ Section Title
 
 .donation-content-items {
   border-radius: 30px;
-  background-color: var(--theme-color3);
+  background-color: rgba(14, 101, 57, 0.9);
   padding: 70px;
   padding-right: 38px;
   position: relative;
