@@ -572,6 +572,8 @@ var THEMEMASCOT = {};
 	$(document).on('click', '.scroll-to-target', function (e) {
 		e.preventDefault();
 		var target = $(this).attr('href');
+		$('.scroll-to-target').parent().removeClass('current');
+		$(`[href="${target}"]`).parent().addClass('current');
 		if ($(target).length) {
 			$('html, body').animate({
 				scrollTop: $(target).offset().top
