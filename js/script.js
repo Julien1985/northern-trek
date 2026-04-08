@@ -129,7 +129,7 @@ var THEMEMASCOT = {};
 
 		var mobileMenuContent = $('.main-header .main-menu .navigation').html();
 		console.log(mobileMenuContent, 'mobileMenuContent');
-		// $('.mobile-menu .navigation').append(mobileMenuContent);
+		$('.mobile-menu .navigation').empty().append(mobileMenuContent);
 		$('.sticky-header .navigation').empty().append(mobileMenuContent);
 		$('.mobile-menu .close-btn').on('click', function () {
 			$('body').removeClass('mobile-menu-visible');
