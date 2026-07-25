@@ -7,6 +7,38 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 
+<!-- Leaflet (trek map) -->
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet">
+<style>
+  #trek-map {
+    width: 100%;
+    height: 520px;
+    border-radius: 30px;
+    z-index: 1;
+  }
+  @media (max-width: 575.98px) {
+    #trek-map { height: 300px; }
+  }
+  .trek-legend {
+    background: rgba(255, 255, 255, 0.92);
+    padding: 8px 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    line-height: 1.6;
+    color: #222;
+  }
+  .trek-legend-row { display: flex; align-items: center; white-space: nowrap; }
+  .trek-legend-row i {
+    width: 14px;
+    height: 4px;
+    margin-right: 8px;
+    border-radius: 2px;
+    display: inline-block;
+    flex: 0 0 auto;
+  }
+</style>
+
 <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
 <meta property="og:title" content="Northern Trek – Raising funds for the Canadian Fallen Firefighters Foundation">
@@ -242,13 +274,41 @@
           </div>
         </section>
 
+        <!-- Volunteer Section Start -->
+        <section class="volunteer-banner-section fix section-padding pb-0">
+          <div class="shape-1"><img src="images/icons/shape1-4.png" alt=""></div>
+          <div class="vec-shape"><img src="images/icons/vec-1-1.png" alt=""></div>
+          <div class="frame-shape"><img src="images/icons/frame1-1.png" alt=""></div>
+          <div class="container">
+            <div class="row g-4 justify-content-between align-items-end">
+              <div class="col-lg-6 col-md-7">
+                <div class="sec-title mb-0">
+                  <div class="sec-sub-title"><h6 class="sub-title tz-sub-tilte tz-sub-anim tx-subTitle">Follow</h6></div>
+                  <h2 class="title tx-title sec_title text-white tz-itm-title tz-itm-anim">Follow along with our journey</h2>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <div class="counter-items">
+                  <h3 class="count-box"><span class="count-text" data-speed="3000" data-stop="105">1</span>+</h3>
+                  <p>Kilometers Traveled</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="volunteer-image">
+            <div class="fix"><div id="trek-map"></div></div>
+            <div class="volunteer-btn">
+              <a href="https://share.garmin.com/northerntrek2026" class="theme-btn"><i class="fa-solid fa-heart"></i> Follow the Journey</a>
+            </div>
+          </div>
+        </section>
         
         <div class="container wow fadeInUp d-none" data-wow-delay=".3s">
           <h2 class="my-5">Sponsors <span class="text-muted fs-6">2026</span></h2>
           <h3 class="mb-2">Platinum <span class="text-muted fs-6">$5,000+</span></h3>
         </div>
 
-        <section class="wow fadeInUp section-padding" data-wow-delay=".3s">
+        <section class="wow fadeInUp section-padding d-none" data-wow-delay=".3s">
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-lg-7">
@@ -330,6 +390,11 @@
                             <img class="w-100" src="images/logo/NSC_vertical.jpg">
                           </div>
                         </a>
+                      </div>
+                      <div class="card border-0 justify-content-center">
+                        <div class="card-body rounded-3">
+                          <img class="w-100" src="images/logo/PRFCA_logo.png">
+                        </div>
                       </div>
                     </div>
 
@@ -745,36 +810,6 @@
           </div>
         </section>
 
-        <!-- Volunteer Section Start -->
-        <section class="volunteer-banner-section fix section-padding pb-0 d-none">
-          <div class="shape-1"><img src="images/icons/shape1-4.png" alt=""></div>
-          <div class="vec-shape"><img src="images/icons/vec-1-1.png" alt=""></div>
-          <div class="frame-shape"><img src="images/icons/frame1-1.png" alt=""></div>
-          <div class="container">
-            <div class="row g-4 justify-content-between align-items-end">
-              <div class="col-lg-6 col-md-7">
-                <div class="sec-title mb-0">
-                  <div class="sec-sub-title"><h6 class="sub-title tz-sub-tilte tz-sub-anim tx-subTitle">Volunteer</h6></div>
-                  <h2 class="title tx-title sec_title text-white tz-itm-title tz-itm-anim">Volunteers Making a Difference Lives</h2>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4">
-                <div class="counter-items">
-                  <h3 class="count-box"><span class="count-text" data-speed="3000" data-stop="54200">105</span>+</h3>
-                  <p>Volunteers Joined</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="volunteer-image">
-            <!-- <div class="fix"><img data-speed=".8" src="images/resource/volunter-bg.jpg" alt=""></div> -->
-            <iframe class="w-100" src="https://share.garmin.com/northerntrek2026" frameborder="0"></iframe>
-            <div class="volunteer-btn">
-              <a href="page-contact.html" class="theme-btn"><i class="fa-solid fa-heart"></i> Join Our Community Now</a>
-            </div>
-          </div>
-        </section>
-
         <!-- Event Section Start -->
         <section class="event-section tp-project-5-2-area fix section-padding pt-0 d-none">
           <div class="container">
@@ -1166,6 +1201,82 @@
 <script src="js/mixitup.js"></script>
 <script src="js/script.js"></script>
 <script src="js/script-gsap.js"></script>
+
+<!-- Trek Map: Leaflet + planned route (data in js/trek-route.js) -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/trek-route.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var el = document.getElementById('trek-map');
+    if (!el || typeof L === 'undefined' || !Array.isArray(window.TREK_ROUTES)) return;
+
+    var map = L.map('trek-map', { scrollWheelZoom: false });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Distinct colour per day so the route reads as six legs.
+    var DAY_COLORS = ['#e6194B', '#f58231', '#ffe119', '#3cb44b', '#4363d8', '#911eb4'];
+
+    var group = L.featureGroup().addTo(map);
+    var legendItems = [];
+    var firstPoint = null, lastPoint = null;
+
+    TREK_ROUTES.forEach(function (route, i) {
+      var latlngs = (route.Points || [])
+        .map(function (p) { return [p.L, p.N]; })
+        .filter(function (c) { return c[0] != null && c[1] != null; });
+      if (!latlngs.length) return;
+
+      if (!firstPoint) firstPoint = latlngs[0];
+      lastPoint = latlngs[latlngs.length - 1];
+
+      var color = DAY_COLORS[i % DAY_COLORS.length];
+      var label = route.Label || ('Route ' + (i + 1));
+      legendItems.push({ color: color, label: label });
+
+      // Dark casing underneath so the coloured route line stays visible on the map.
+      L.polyline(latlngs, { color: '#0b3d4d', weight: 7, opacity: 0.55 }).addTo(group);
+      L.polyline(latlngs, { color: color, weight: 4, opacity: 0.95 })
+        .bindPopup(label)
+        .addTo(group);
+    });
+
+    if (firstPoint) {
+      L.circleMarker(firstPoint, { radius: 7, color: '#fff', weight: 2, fillColor: '#22c55e', fillOpacity: 1 })
+        .bindTooltip('Start').addTo(group);
+    }
+    if (lastPoint) {
+      L.circleMarker(lastPoint, { radius: 7, color: '#fff', weight: 2, fillColor: '#111', fillOpacity: 1 })
+        .bindTooltip('Finish').addTo(group);
+    }
+
+    // Legend keyed to the day colours.
+    var legend = L.control({ position: 'bottomright' });
+    legend.onAdd = function () {
+      var div = L.DomUtil.create('div', 'trek-legend');
+      div.innerHTML = legendItems.map(function (it) {
+        return '<span class="trek-legend-row"><i style="background:' + it.color + '"></i>' + it.label + '</span>';
+      }).join('');
+      return div;
+    };
+    legend.addTo(map);
+
+    // Frame + centre the whole route. Re-fit once the container has its final
+    // size (this template animates layout via GSAP smooth-scroll/parallax).
+    function fitRoute() {
+      try {
+        map.invalidateSize(false);
+        map.fitBounds(group.getBounds(), { padding: [30, 30] });
+      } catch (e) { map.setView([55.65, -117.95], 8); }
+    }
+    fitRoute();
+    setTimeout(fitRoute, 400);
+    window.addEventListener('load', fitRoute);
+  });
+</script>
 </body>
 
 </html>
